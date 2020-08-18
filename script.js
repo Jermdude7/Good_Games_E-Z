@@ -53,10 +53,10 @@ function getStoreName(storeID, $price, $link) {
     let $card = $("<div>").addClass("card"); // creates card
     let $cardImg = $("<div>").addClass("card-image"); // creates div for card image
     let $figure = $("<figure>").addClass("image is-3by1"); // img tag gets inserted in here
-    let $cardContent = $("<div>").addClass("card-content")
-    let $media = $("<div>").addClass("media")
-    let $mediaContent = $("<div>").addClass("media-content")
-    let $content = $("<div>").addClass("content")
+    let $cardContent = $("<div>").addClass("card-content"); // div that will hold media & 
+    let $media = $("<div>").addClass("media");
+    let $mediaContent = $("<div>").addClass("media-content");
+    let $content = $("<div>").addClass("content");
     
     $($content).append($link)
     $($mediaContent).append($retailer, $price)
