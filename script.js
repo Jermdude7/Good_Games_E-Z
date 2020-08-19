@@ -1,5 +1,4 @@
 let gameInfo = null;
-// let gameName = "skyrim";
 
 
 
