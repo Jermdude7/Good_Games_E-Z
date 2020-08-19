@@ -1,20 +1,24 @@
 let gameInfo = null;
-let gameName = "skyrim";
-let queryURL = "https://api.rawg.io/api/games?search=";
-let titleHeader = document.getElementById("title");
-let rating = document.getElementById("rating");
-let background = document.getElementById("backgroundImg");
-let platformList = document.getElementById("platforms");
-let released = document.getElementById("release");
+// let gameName = "skyrim";
 
-const videoIframe = document.querySelector("iframe");
-videoIframe.setAttribute("src", "https://www.youtube.com/embed/vid");
-
-function onPlayerReady(event) {
-  event.target.playVideo();
-}
+$("#search-bar").on("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault;
+    let gameName = $("#search-bar").val();
+    $("#shopping").empty();
+    $("#platforms").empty();
+    getGame(gameName);
+    getGameID(gameName);
+  }
+});
 
 function getGame(gameName) {
+  let queryURL = "https://api.rawg.io/api/games?search=";
+  let titleHeader = document.getElementById("title");
+  let rating = document.getElementById("rating");
+  let background = document.getElementById("backgroundImg");
+  let platformList = document.getElementById("platforms");
+  let released = document.getElementById("release");
   $.ajax({
     url: queryURL + gameName,
     method: "GET",
@@ -42,10 +46,6 @@ function getGame(gameName) {
     }
   });
 }
-getGame(gameName);
-// create button for evenlistner in order to attach gamefunction TO that button
-// input validation
-getGameID(gameName);
 
 function getGameID(gameName) {
   var queryURL =
@@ -84,9 +84,9 @@ function getPrices(gameID) {
   });
 }
 function getStoreName(storeID, $price, $link) {
-  queryURL = "https://www.cheapshark.com/api/1.0/stores";
+  storeQueryURL = "https://www.cheapshark.com/api/1.0/stores";
   $.ajax({
-    url: queryURL,
+    url: storeQueryURL,
     method: "GET",
   }).then(function (response) {
     // console.log(response)

@@ -10,10 +10,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 </head>
+<body>
 
-    <body>
-      
-    </body>
     <nav class="navbar" style="background-color: aquamarine;">
       <div class="container is-fluid">
           <div class="container level-left">
@@ -22,7 +20,7 @@
           <div class="container level-middle">
               <div class="control has-icons-right">
                   <div class="level-item">
-                      <input class="input is-rounded" type="text" placeholder="Search Game">
+                      <input class="input is-rounded" type="text" placeholder="Search Game" id="search-bar">
                       <span class="icon is-small is-right">
                           <i class="fas fa-search"></i>
                       </span>
@@ -37,16 +35,20 @@
             viewport size.
             <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
                 <div class="column is-one-third">
-                    Game Bio
-                    <div class="control">
-                        <textarea class="textarea" readonly>Game bio goes herey</textarea>
+                    <div id="gameData">
+                        <h1 id="title"></h1>
+                        <img id="backgroundImg" width="250" height="150" />
+                        <p>Metacritic Rating: <span id="rating"></span></p>
+                        <p>Released: <span id="release"></span></p>
+                        <span>Platforms:</span>
+                        <ul id="platforms"></ul>
                       </div>
                 </div>
                 <div class="column is-one-third">
                    Video Game Media
-                   <div class="control">
-                    <textarea class="textarea" readonly>Other media will go to place like this</textarea>
-                  </div>
+                    <div class="control">
+                    
+                   </div>
                 </div>
                 <div class="tile is-ancestor">
                     <div class="tile is-vertical is-8">
@@ -56,12 +58,6 @@
                             <p class="title">Article 1.</p>
                             <p class="subtitle">Top tile</p>
                           </article>
-                          <!-- <div class="tile is-parent">
-                            <article class="tile is-child notification is-info">
-                              <p class="title">Middle tile</p>
-                              <p class="subtitle">Middle</p>
-                            </article>
-                          </div> -->
                             <article class="tile is-child notification is-warning">
                             <p class="title">Article 2</p>
                             <p class="subtitle">Bottom tile</p>
@@ -88,8 +84,8 @@
             </p>
           </div>
         </div>
-        </div>
-        
+    </div>
+<div id="shopping"></div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -97,3 +93,7 @@
 </body>
 
 </html>
+
+
+
+
