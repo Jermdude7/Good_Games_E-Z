@@ -7,8 +7,10 @@ $("#search-bar").on("keypress", function (e) {
     let gameName = $("#search-bar").val();
     $("#shopping").empty();
     $("#platforms").empty();
+    $("#twitch-link").empty();
     getGame(gameName);
     getGameID(gameName);
+    searchTwitch(gameName);
   }
 });
 
@@ -116,4 +118,11 @@ function getStoreName(storeID, $price, $link) {
     console.log(storeName);
     console.log(bannerURL);
   });
+}
+
+function searchTwitch(gameName) {
+  $link = $("<a>")
+    .attr("href", "http://twitch.tv/search?term=" + gameName)
+    .text("See Who's Streaming This Game!");
+  $("#twitch-link").append($link);
 }
