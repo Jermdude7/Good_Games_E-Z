@@ -1,3 +1,7 @@
+.flex{
+  background-color:red;
+  
+}
 #gameData {
   display: none;
 }
