@@ -39,6 +39,7 @@ function getGame(gameName) {
 getGame("skyrim");
 // create button for evenlistner in order to attach gamefunction TO that button
 // input validation
+getGameID(gameName);
 
 function getGameID(gameName) {
   var queryURL =
@@ -53,6 +54,15 @@ function getGameID(gameName) {
     getPrices(gameID);
   });
 }
+
+$.ajax({
+  url: queryURL,
+  method: "GET",
+}).then(function (response) {
+  console.log(response);
+  let gameID = response[0].gameID;
+  getPrices(gameID);
+});
 function getPrices(gameID) {
   queryURL = "https://www.cheapshark.com/api/1.0/games?id=" + gameID;
   $.ajax({
