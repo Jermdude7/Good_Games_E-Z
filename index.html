@@ -8,54 +8,81 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 </head>
-<body class="has-navbar-fixed-top">
-    <nav class="navbar is-fixed-top">
-        <div class="container is-fluid">
-            <div class="container level-left">
-                <h1>Good Games E-Z</h1>
-            </div>
-            <div class="container is-fluid is-centered">
-                <div class="control has-icons-right">
-                    <div class="level-item">
-                        <input class="input is-rounded" type="text" placeholder="Search Game">
-                        <span class="icon is-small is-right">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
+<body>
 
-        </div>
-    </nav>
-    <section class="section">
-        <div class="container">
-            <div class="columns is-1">
-                <div class="column">
-                    <div class="column">
-                    </div>
-                    <div class="column">
-                        <div id="gameData">
-                            <h1 id="title"></h1>
-                            <img id="backgroundImg" width="250" height="150" />
-                            <p>Metacritic Rating: <span id="rating"></span></p>
-                            <p>Released: <span id="release"></span></p>
-                            <span>Platforms:</span>
-                            <ul id="platforms"></ul>
-                          </div>
-                    </div>
+    <nav class="navbar" style="background-color: aquamarine;">
+      <div class="container is-fluid">
+          <div class="container level-left">
+              <h1 class="title">Good Games E-Z</h1>
+          </div>
+          <div class="container level-middle">
+              <div class="control has-icons-right">
+                  <div class="level-item">
+                      <input class="input is-rounded" type="text" placeholder="Search Game" id="search-bar">
+                      <span class="icon is-small is-right">
+                          <i class="fas fa-search"></i>
+                      </span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+    <div class="container is-fluid">
+        <div class="notification">
+            This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any
+            viewport size.
+            <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
+                <div class="column is-one-third">
+                    <div id="gameData">
+                        <h1 id="title"></h1>
+                        <img id="backgroundImg" width="250" height="150" />
+                        <p>Metacritic Rating: <span id="rating"></span></p>
+                        <p>Released: <span id="release"></span></p>
+                        <span>Platforms:</span>
+                        <ul id="platforms"></ul>
+                      </div>
                 </div>
-                <div class="column"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus voluptatum numquam rem reiciendis nam quae consequatur iure incidunt et dolorum quisquam mollitia magnam, velit voluptate assumenda, eaque, ipsa sequi praesentium.</p></div>
+                <div class="column is-one-third">
+                   Video Game Media
+                    <div class="control">
+                    
+                   </div>
+                </div>
+                <div class="tile is-ancestor">
+                    <div class="tile is-vertical is-8">
+                      <div class="tile">
+                        <div class="tile is-parent is-vertical">
+                          <article class="tile is-child notification is-primary">
+                            <p class="title">Article 1.</p>
+                            <p class="subtitle">Top tile</p>
+                          </article>
+                            <article class="tile is-child notification is-warning">
+                            <p class="title">Article 2</p>
+                            <p class="subtitle">Bottom tile</p>
+                          </article>
+                        </div>
+                    </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child notification is-danger">
+                                  <p class="title">Article 3</p>
+                                  <p class="subtitle">Aligned with the right tile</p>
+                                  <div class="content">
+                                    <!-- Content --> All the words and stuff
+                                  </div>
+                                </article>
+                              </div>
             </div>
         </div>
-    </section>
-    <section class="section">
-        <div class="container" id="shopping">
-            
-        </div>
-    </section>
-    
+    </div>
+<div id="shopping"></div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src=script.js></script>
 </body>
 </html>
+
+
+
+
