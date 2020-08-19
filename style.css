@@ -1,0 +1,10 @@
+#gameData {
+  display: none;
+}
+.card {
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+    border: solid 2px;
+    border-radius: 15px;
+}
