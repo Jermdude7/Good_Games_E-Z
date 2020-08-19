@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let gameInfo = null;
 
 let gameName = "pubg";
@@ -40,19 +39,24 @@ function getGame(gameName) {
 getGame("pubg");
 // create button for evenlistner in order to attach gamefunction TO that button
 // input validation
-=======
-let gameName = "skyrim";
-var queryURL =
-  "https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=10";
+getGameID(gameName);
 
-$.ajax({
-  url: queryURL,
-  method: "GET",
-}).then(function (response) {
-  console.log(response);
-  let gameID = response[0].gameID;
-  getPrices(gameID);
-});
+
+function getGameID(gameName) {
+
+  var queryURL =
+  "https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=10";
+  
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (response) {
+    console.log(response);
+    let gameID = response[0].gameID;
+    getPrices(gameID);
+  });
+}
+
 
 function getPrices(gameID) {
   queryURL = "https://www.cheapshark.com/api/1.0/games?id=" + gameID;
@@ -115,4 +119,3 @@ function getStoreName(storeID, $price, $link) {
     console.log(bannerURL);
   });
 }
->>>>>>> c0569a00433a488f9d4f03cadd1c4e162b57fffb
