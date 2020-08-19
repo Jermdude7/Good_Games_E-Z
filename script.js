@@ -1,6 +1,5 @@
 let gameInfo = null;
 // let gameName = "skyrim";
-
 $("#search-bar").on("keypress", function (e) {
   if (e.key === "Enter") {
     e.preventDefault;
@@ -34,68 +33,6 @@ function getGame(gameName) {
       released: response.released,
     };
     rating.textContent = response.metacritic;
-    titleHeader.textContent = response.name;
-    background.setAttribute("src", response.background_image);
-    //   platformList.textContent =
-    released.textContent = response.released;
-    console.log(response);
-    document.getElementById("gameData").style.display = "block";
-    for (let listElement of response.platforms) {
-      console.log(listElement.platform.name);
-      let platform = document.createElement("li");
-      platform.textContent = listElement.platform.name;
-      platformList.appendChild(platform);
-    }
-  });
-}
-
-function getGameID(gameName) {
-  var queryURL =
-    "https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=10";
-
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    console.log(response);
-    let gameID = response[0].gameID;
-    getPrices(gameID);
-  });
-}
-function getPrices(gameID) {
-  queryURL = "https://www.cheapshark.com/api/1.0/games?id=" + gameID;
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    console.log(response);
-    allPrices = response.deals;
-    for (let i = 0; i < 5; i++) {
-      let deals = allPrices[i];
-
-      let dealID = deals.dealID;
-      let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID;
-      let $link = $("<a>").attr("href", dealURL).text("Buy Now!"); // link to retailer
-
-      let price = deals.price;
-      let $price = $("<p>").addClass("title is-4").text(price); // price
-
-      let storeID = deals.storeID;
-      getStoreName(storeID, $price, $link);
-    }
-  });
-}
-function getStoreName(storeID, $price, $link) {
-  storeQueryURL = "https://www.cheapshark.com/api/1.0/stores";
-  $.ajax({
-    url: storeQueryURL,
-    method: "GET",
-  }).then(function (response) {
-    // console.log(response)
-    let storeName = response[storeID - 1].storeName;
-    let $retailer = $("<p>").addClass("subtitle is-6").text(storeName);
-
-    let bannerPath = response[storeID - 1].images.banner;
     let bannerURL = "http://www.cheapshark.com" + bannerPath;
     let $banner = $("<img>").attr("src", bannerURL);
 
