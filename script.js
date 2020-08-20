@@ -75,7 +75,7 @@ function getPrices(gameID) {
   }).then(function (response) {
     console.log(response);
     allPrices = response.deals;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
       let deals = allPrices[i];
 
       let dealID = deals.dealID;
@@ -86,7 +86,7 @@ function getPrices(gameID) {
       }).text("Buy Now!") // link to retailer
 
       let price = deals.price;
-      let $price = $("<p>").addClass("title is-4").text(price); // price
+      let $price = $("<p>").addClass("title is-4").text("$" + price); // price
       let storeID = deals.storeID;
       getStoreName(storeID, $price, $link);
     }
@@ -100,8 +100,6 @@ function getStoreName(storeID, $price, $link) {
     method: "GET",
   }).then(function (response) {
     // console.log(response)
-    let storeName = response[storeID - 1].storeName;
-    let $retailer = $("<p>").addClass("subtitle is-6").text(storeName);
 
     let bannerPath = response[storeID - 1].images.banner;
     let bannerURL = "http://www.cheapshark.com" + bannerPath;
@@ -113,14 +111,16 @@ function getStoreName(storeID, $price, $link) {
     let $cardContent = $("<div>").addClass("card-content"); // div that will hold media &
     let $media = $("<div>").addClass("media");
     let $mediaContent = $("<div>").addClass("media-content");
+    let $tile = $("<div>").addClass("tile is-child is-dark");
 
-    $($mediaContent).append($retailer, $price, $link)
+    $($mediaContent).append($price, $link)
     $($media).append($mediaContent)
     $($cardContent).append($media)
     $($figure).append($banner)
     $($cardImg).append($figure)
     $($card).append($cardImg, $cardContent)
-    $("#shopping").append($card)
+    $($tile).append($card)
+    $("#shopping").prepend($tile)
     console.log(storeName);
     console.log(bannerURL);
   });
@@ -134,7 +134,7 @@ function searchTwitch(gameName) {
       id: "twitch-btn",
       target: "_blank"
     })
-    .text("See Who's Streaming This Game!")
+    .text("See Who's Streaming This Game! ")
   $($link).append($icon)
   $("#twitch-link").append($link);
 }
