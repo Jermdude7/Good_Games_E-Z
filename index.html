@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GG-EZ</title>
     <script src="https://kit.fontawesome.com/5b8ca097d5.js" crossorigin="anonymous"></script>
@@ -43,18 +43,35 @@
                             <div class="tile is-child notification is-dark">
                                 <span class="title">Platforms:</span>
 
-                                <ul class="subtitle" style="margin-top: 10px;" id="platforms"></ul>
+                                <ul class="content" style="margin-top: 10px;" id="platforms"></ul>
+                            </div>
+                        </div>
+                        <div class="tile is-6 is-vertical is-parent">
+                            <div class="tile is-child notification is-dark">
+                                <h1 class="title">Game Description:</h1>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="column is-half">
-                    <h1 class="title">Video Game Media</h1>
-                    <iframe id="viewer" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                    <div id="twitch-link"></div>
-                    <div class="control"></div>
+                    <div class="tile is-ancestor">
+                        <div class="tile is-parent">
+                            <div class="tile is-9 is-child notification is-dark">
+                                <h1 class="title">Video Game Media</h1>
+                                <div class="tile is-12 is-child notification is-danger">
+                                    <div class="iframe-container">
+                                        <iframe style="padding: 0px;" id="viewer" width="560" height="315"
+                                            src="https://www.youtube.com/embed/" frameborder="0"
+                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="tile is-12 is-child notification is-info">
+                                    <div id="twitch-link"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
