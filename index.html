@@ -1,62 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GG-EZ</title>
-    <script src="https://kit.fontawesome.com/5b8ca097d5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+    <script
+      src="https://kit.fontawesome.com/5b8ca097d5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <section class="hero is-dark is-bold">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">Good Games E-Z</h1>
-                <div class="control has-icons-right is-center">
-                    <div class="level-item">
-                        <input id="search-bar" class="input is-rounded" type="text" placeholder="Search Game">
-                        <span class="icon is-small is-right">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </div>
-                </div>
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Good Games E-Z</h1>
+          <div class="control has-icons-right is-center">
+            <div class="level-item">
+              <input
+                id="search-bar"
+                class="input is-rounded"
+                type="text"
+                placeholder="Search Game"
+              />
+              <span class="icon is-small is-right">
+                <i class="fas fa-search"></i>
+              </span>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-
     <section class="section">
-        <div class="container is-fluid">
-
-            <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
-                <div class="column is-half">
-                    <div id="gameData">
-                        <h1 id="title"></h1>
-                        <img id="backgroundImg" width="250" height="150" />
-                        <p>Metacritic Rating: <span id="rating"></span></p>
-                        <p>Released: <span id="release"></span></p>
-                        <span>Platforms:</span>
-                        <ul id="platforms"></ul>
-                    </div>
-                </div>
-
-                <div class="column is-half">
-                    <h1 class="title">Video Game Media</h1>
-                    <div class="control"></div>
-                </div>
+      <div class="container is-fluid">
+        <div
+          class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd"
+        >
+          <div class="column is-half">
+            <div id="gameData">
+              <h1 id="title"></h1>
+              <img id="backgroundImg" width="250" height="150" />
+              <p>Metacritic Rating: <span id="rating"></span></p>
+              <p>Released: <span id="release"></span></p>
+              <span>Platforms:</span>
+              <ul id="platforms"></ul>
             </div>
+          </div>
+          <div class="column is-half">
+            <h1 class="title">Video Game Media</h1>
+            <iframe
+              id="viewer"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <div class="control"></div>
+          </div>
         </div>
+      </div>
     </section>
-
     <section class="section">
-        <div id="shopping" class="container is-fluid"></div>
+      <div id="shopping" class="container is-fluid"></div>
     </section>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src=script.js></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>
