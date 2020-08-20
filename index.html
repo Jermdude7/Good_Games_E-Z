@@ -31,13 +31,19 @@
         <div class="container is-fluid">
             <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
                 <div class="column is-half">
-                    <div id="gameData">
-                        <h1 id="title"></h1>
-                        <img id="backgroundImg" width="250" height="150" />
-                        <p>Metacritic Rating: <span id="rating"></span></p>
-                        <p>Released: <span id="release"></span></p>
-                        <span>Platforms:</span>
-                        <ul id="platforms"></ul>
+                    <div class="tile is-ancestor">
+                        <div class="tile is-6 is-vertical is-parent">
+                          <div class="tile is-child notification is-dark">
+                            <h1 class="title" id="title">Game title</h1>
+                            <img id="backgroundImg" width="" height="" />
+                            <p class="subtitle">Released: <span id="release"></span></p>
+                            <p class="subtitle">Metacritic Rating: <span id="rating"></span></p>
+                          </div>  
+                          <div class="tile is-child notification is-dark">
+                            <span class="subtitle">Platforms:</span>
+                            <ul class="subtitle" id="platforms"></ul>
+                          </div>  
+                        </div>
                     </div>
                 </div>
                 <div class="column is-half">

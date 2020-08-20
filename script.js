@@ -39,7 +39,6 @@ let released = document.getElementById("release");
     //   platformList.textContent =
     released.textContent = response.released;
     console.log(response);
-    document.getElementById("gameData").style.display = "block";
     for (let listElement of response.platforms) {
       console.log(listElement.platform.name);
       let platform = document.createElement("li");
