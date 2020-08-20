@@ -2,87 +2,89 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GG-EZ</title>
-    <script src="https://kit.fontawesome.com/5b8ca097d5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="style.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GG-EZ</title>
+  <script src="https://kit.fontawesome.com/5b8ca097d5.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <section class="hero is-dark is-bold">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">Good Games E-Z</h1>
-                <div class="control has-icons-right is-center">
-                    <div class="level-item">
-                        <input id="search-bar" class="input is-rounded" type="text" placeholder="Search Game">
-                        <span class="icon is-small is-right">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
+  <section class="hero is-dark is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Good Games E-Z</h1>
+        <div class="control has-icons-right is-center">
+          <div class="level-item">
+            <input id="search-bar" class="input is-rounded" type="text" placeholder="Search Game">
+            <span class="icon is-small is-right">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
         </div>
-    </section>
-
-    <div class="container is-fluid">
-        <!-- <div class="notification"> -->
-            This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any
-            viewport size.
-            <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
-                <div class="column is-one-third">
-                    <div id="gameData">
-                        <h1 id="title"></h1>
-                        <img id="backgroundImg" width="250" height="150" />
-                        <p>Metacritic Rating: <span id="rating"></span></p>
-                        <p>Released: <span id="release"></span></p>
-                        <span>Platforms:</span>
-                        <ul id="platforms"></ul>
-                      </div>
-                </div>
-                <div class="column is-one-third">
-                   Video Game Media
-                    <div class="control" id="twitch-link">
-                    
-                   </div>
-                </div>
-                <div class="tile is-ancestor">
-                    <div class="tile is-vertical is-8">
-                      <div class="tile">
-                        <div class="tile is-parent is-vertical">
-                          <article class="tile is-child notification is-primary">
-                            <p class="title">Article 1.</p>
-                            <p class="subtitle">Top tile</p>
-                          </article>
-                            <article class="tile is-child notification is-warning">
-                            <p class="title">Article 2</p>
-                            <p class="subtitle">Bottom tile</p>
-                          </article>
-                        </div>
-                    </div>
-                        <div class="tile is-parent">
-                            <article class="tile is-child notification is-danger">
-                                <p class="title">Article 3</p>
-                                <p class="subtitle">Aligned with the right tile</p>
-                                <div class="content">
-                                    <!-- Content --> All the words and stuff
-                                </div>
-                            </article>
-                        </div>
-            </div>
-        </div>
+      </div>
     </div>
-<div id="shopping"></div>
+  </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src=script.js></script>
+  <div class="container is-fluid">
+    <!-- <div class="notification"> -->
+    <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
+      <div class="column is-one-half">
+        Game
+        <div id="gameData">
+          <h1 id="title"></h1>
+          <img id="backgroundImg" width="250" height="150" />
+          <p>Metacritic Rating: <span id="rating"></span></p>
+          <p>Released: <span id="release"></span></p>
+          <span>Platforms:</span>
+          <ul id="platforms"></ul>
+        </div>
+      </div>
+      <div class="column is-one-half">
+        Video Game Media
+        <div class="control" id="twitch-link">
+        </div>
+      </div>
+    </div>
+    <div id="shopping"></div>
+  </div>
+  <footer class="footer">
+    <div class="content has-text-centered">
+     <h1 style = "color : white"> Good Games E-Z</h1>
+      <p>
+         By Cooper, Blake, Dalton and Jeremy.
+      </p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script src=script.js></script>
 </body>
 
 </html>
-
-
-
-
+<!-- <div class="tile is-ancestor">
+                <div class="tile is-vertical is-8">
+                  <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                      <article class="tile is-child notification is-primary">
+                        <p class="title">Article 1.</p>
+                        <p class="subtitle">Top tile</p>
+                      </article>
+                      <article class="tile is-child notification is-warning">
+                        <p class="title">Article 2</p>
+                        <p class="subtitle">Bottom tile</p>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="tile is-parent">
+                    <article class="tile is-child notification is-danger">
+                      <p class="title">Article 3</p>
+                      <p class="subtitle">Aligned with the right tile</p>
+                      <!-- <div class="content"> -->
+<!-- Content -->
+<!-- </article>
+                  </div>
+                </div>
+              </div> -->
