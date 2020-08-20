@@ -2,12 +2,21 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GG-EZ</title>
   <script src="https://kit.fontawesome.com/5b8ca097d5.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
+=======
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GG-EZ</title>
+    <script src="https://kit.fontawesome.com/5b8ca097d5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+>>>>>>> cbecc9a98dc38ec5d297fa9125c23dc9c2ed8bb9
 </head>
 
 <body>
@@ -43,9 +52,39 @@
               <div class="tile is-child notification is-dark">
                 <span class="title">Platforms:</span>
 
-                <ul class="subtitle" style="margin-top: 10px;" id="platforms"></ul>
-              </div>
+                                <ul class="content" style="margin-top: 10px;" id="platforms"></ul>
+                            </div>
+                        </div>
+                        <div class="tile is-6 is-vertical is-parent">
+                            <div class="tile is-child notification is-dark">
+                                <h1 class="title">Game Description:</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="tile is-ancestor">
+                        <div class="tile is-parent">
+                            <div class="tile is-9 is-child notification is-dark">
+                                <h1 class="title">Video Game Media</h1>
+                                <div class="tile is-12 is-child notification is-danger">
+                                    <div class="iframe-container">
+                                        <iframe style="padding: 0px;" id="viewer" width="560" height="315"
+                                            src="https://www.youtube.com/embed/" frameborder="0"
+                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="tile is-12 is-child notification is-info">
+                                    <div id="twitch-link"><i class="fab fa-twitch"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+          </div>
+            <div class="control"></div>
           </div>
         </div>
     <div class="column is-half">
@@ -60,9 +99,13 @@
     </div>
   </section>
 
-  <section class="section">
-    <div id="shopping" class="container is-fluid"></div>
-  </section>
+    <section class="section">
+        <div class="container is-fluid">
+            <div class="tile is-ancestor">
+                <div id="shopping" class="tile is-parent"></div>
+            </div>
+        </div>
+    </section>
 
   <footer class="footer">
     <div class="content has-text-centered">
