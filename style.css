@@ -1,9 +1,11 @@
 .flex {
   background-color: red;
 }
+
 #gameData {
   display: none;
 }
+
 .card {
   width: 150px;
   height: 150px;
@@ -12,6 +14,15 @@
   border-radius: 15px;
   float: left;
   margin-right: 20px;
+}
+
+h1.footer {
+  color: white;
+}
+
+.footer {
+  background-color: #363636;
+  color: white;
 }
 
 .button {

@@ -14,6 +14,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <section class="hero is-dark is-bold">
       <div class="hero-body">
@@ -35,23 +36,38 @@
         </div>
       </div>
     </section>
+
     <section class="section">
       <div class="container is-fluid">
         <div
           class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd"
         >
           <div class="column is-half">
-            <div id="gameData">
-              <h1 id="title"></h1>
-              <img id="backgroundImg" width="250" height="150" />
-              <p>Metacritic Rating: <span id="rating"></span></p>
-              <p>Released: <span id="release"></span></p>
-              <span>Platforms:</span>
-              <ul id="platforms"></ul>
+            <div class="tile is-ancestor">
+              <div class="tile is-6 is-vertical is-parent">
+                <div class="tile is-child notification is-dark">
+                  <h1 class="title" id="title">Game title</h1>
+                  <img id="backgroundImg" width="" height="" />
+
+                  <p class="subtitle" style="margin-top: 10px;">
+                    Released: <span id="release"></span>
+                  </p>
+                  <p class="subtitle">
+                    Metacritic Rating: <span id="rating"></span>
+                  </p>
+                </div>
+                <div class="tile is-child notification is-dark">
+                  <span class="title">Platforms:</span>
+
+                  <ul
+                    class="subtitle"
+                    style="margin-top: 10px;"
+                    id="platforms"
+                  ></ul>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="bio">Description</div>
-          <!-- test -->
           <div class="column is-half">
             <h1 class="title">Video Game Media</h1>
             <iframe
@@ -69,9 +85,19 @@
         </div>
       </div>
     </section>
+
     <section class="section">
       <div id="shopping" class="container is-fluid"></div>
     </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <h1 style="color: white;">Good Games E-Z</h1>
+        <p>
+          By Cooper, Blake, Dalton and Jeremy.
+        </p>
+      </div>
+    </footer>
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="

@@ -12,18 +12,9 @@ $("#search-bar").on("keypress", function (e) {
     searchTwitch(gameName);
   }
 });
-
 function getBio(gameName) {
-  let queryURL =
-    "http://www.gamespot.com/api/games/?api_key=6e9eb26f753ae20988be4264ff5b8d4445079c83";
+  console.log(gameName);
 }
-$ajax({
-  url: queryURL,
-  method: "GET",
-  headers: {
-    api_key: "6e9eb26f753ae20988be4264ff5b8d4445079c83",
-  },
-});
 
 function getGame(gameName) {
   let queryURL = "https://api.rawg.io/api/games?search=";
