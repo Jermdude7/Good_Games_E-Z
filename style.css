@@ -10,6 +10,13 @@
   float: left;
   margin-right: 20px;
 }
+h1.footer {
+  color: white;
+}
+.footer {
+  background-color: #363636;
+  color: white;
+}
 .button {
   margin-top: -20px;
 }
