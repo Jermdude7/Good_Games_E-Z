@@ -1,4 +1,6 @@
 let gameInfo = null;
+// let gameName = "skyrim";
+
 $("#search-bar").on("keypress", function (e) {
   if (e.key === "Enter") {
     e.preventDefault;
@@ -11,6 +13,7 @@ $("#search-bar").on("keypress", function (e) {
     searchTwitch(gameName);
   }
 });
+
 function getGame(gameName) {
   let queryURL = "https://api.rawg.io/api/games?search=";
   let titleHeader = document.getElementById("title");
@@ -18,12 +21,14 @@ function getGame(gameName) {
   let background = document.getElementById("backgroundImg");
   let platformList = document.getElementById("platforms");
   let released = document.getElementById("release");
+  let viewerIframe = document.getElementById("viewer");
   $.ajax({
     url: queryURL + gameName,
     method: "GET",
   }).then(function (res) {
     response = res.results[0];
     gameInfo = {
+      videoId: response.clip.video,
       title: response.name,
       rating: response.metacritic,
       image: response.background_image,
@@ -33,6 +38,10 @@ function getGame(gameName) {
     rating.textContent = response.metacritic;
     titleHeader.textContent = response.name;
     background.setAttribute("src", response.background_image);
+    viewerIframe.setAttribute(
+      "src",
+      "https://www.youtube.com/embed/" + gameInfo.videoId
+    );
     //   platformList.textContent =
     released.textContent = response.released;
     console.log(response);
