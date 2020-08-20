@@ -38,3 +38,7 @@ h1.footer{
 .subtitle {
   margin-top: -20px;
 }
+
+#twitch-btn {
+  margin: 0;
+}

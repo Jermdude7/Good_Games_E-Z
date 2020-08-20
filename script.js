@@ -82,7 +82,7 @@ function getPrices(gameID) {
       let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID
       let $link = $("<a>").addClass("button is-success is-light is-small").attr({
         href: dealURL,
-        target: "_blank"
+        target: "_blank",
       }).text("Buy Now!") // link to retailer
 
       let price = deals.price;
@@ -128,8 +128,7 @@ function getStoreName(storeID, $price, $link) {
 
 function searchTwitch(gameName) {
   $link = $("<a>").addClass("button is-dark")
-    .attr("href", "http://twitch.tv/search?term=" + gameName)
+    .attr({href: "http://twitch.tv/search?term=" + gameName, id: "twitch-btn"})
     .text("See Who's Streaming This Game!")
   $("#twitch-link").append($link);
-  
 }
