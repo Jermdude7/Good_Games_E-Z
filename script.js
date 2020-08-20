@@ -1,5 +1,4 @@
 let gameInfo = null;
-// let gameName = "skyrim";
 
 $("#search-bar").on("keypress", function (e) {
   if (e.key === "Enter") {
@@ -14,6 +13,18 @@ $("#search-bar").on("keypress", function (e) {
   }
 });
 
+function getBio(gameName) {
+  let queryURL =
+    "http://www.gamespot.com/api/games/?api_key=6e9eb26f753ae20988be4264ff5b8d4445079c83";
+}
+$ajax({
+  url: queryURL,
+  method: "GET",
+  headers: {
+    api_key: "6e9eb26f753ae20988be4264ff5b8d4445079c83",
+  },
+});
+
 function getGame(gameName) {
   let queryURL = "https://api.rawg.io/api/games?search=";
   let titleHeader = document.getElementById("title");
@@ -22,6 +33,7 @@ function getGame(gameName) {
   let platformList = document.getElementById("platforms");
   let released = document.getElementById("release");
   let viewerIframe = document.getElementById("viewer");
+  let bioGame = document.getElementById("bio");
   $.ajax({
     url: queryURL + gameName,
     method: "GET",
@@ -80,7 +92,10 @@ function getPrices(gameID) {
 
       let dealID = deals.dealID;
       let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID;
-      let $link = $("<a>").attr("href", dealURL).text("Buy Now!"); // link to retailer
+      let $link = $("<a>")
+        .addClass("button is-success is-light is-small")
+        .attr({ href: dealURL, target: "_blank" })
+        .text("Buy Now!"); // link to retailer
 
       let price = deals.price;
       let $price = $("<p>").addClass("title is-4").text(price); // price
@@ -109,12 +124,10 @@ function getStoreName(storeID, $price, $link) {
     let $cardContent = $("<div>").addClass("card-content"); // div that will hold media &
     let $media = $("<div>").addClass("media");
     let $mediaContent = $("<div>").addClass("media-content");
-    let $content = $("<div>").addClass("content");
 
-    $($content).append($link);
-    $($mediaContent).append($retailer, $price);
+    $($mediaContent).append($retailer, $price, $link);
     $($media).append($mediaContent);
-    $($cardContent).append($media, $content);
+    $($cardContent).append($media);
     $($figure).append($banner);
     $($cardImg).append($figure);
     $($card).append($cardImg, $cardContent);
