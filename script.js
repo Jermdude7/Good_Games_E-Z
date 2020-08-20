@@ -1,5 +1,4 @@
 let gameInfo = null;
-// let gameName = "skyrim";
 
 $("#search-bar").on("keypress", function (e) {
   if (e.key === "Enter") {
@@ -77,6 +76,14 @@ function getPrices(gameID) {
     allPrices = response.deals;
     for (let i = 0; i < 5; i++) {
       let deals = allPrices[i];
+      
+      
+      let dealID = deals.dealID; 
+      let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID
+      let $link = $("<a>").addClass("button is-success is-light is-small").attr({href: dealURL, target: "_blank"}).text("Buy Now!") // link to retailer
+      
+      let price = deals.price;
+      let $price = $("<p>").addClass("title is-4").text("$"+price) // price
 
       let dealID = deals.dealID;
       let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID;
@@ -109,16 +116,14 @@ function getStoreName(storeID, $price, $link) {
     let $cardContent = $("<div>").addClass("card-content"); // div that will hold media &
     let $media = $("<div>").addClass("media");
     let $mediaContent = $("<div>").addClass("media-content");
-    let $content = $("<div>").addClass("content");
-
-    $($content).append($link);
-    $($mediaContent).append($retailer, $price);
-    $($media).append($mediaContent);
-    $($cardContent).append($media, $content);
-    $($figure).append($banner);
-    $($cardImg).append($figure);
-    $($card).append($cardImg, $cardContent);
-    $("#shopping").append($card);
+    
+    $($mediaContent).append($retailer, $price, $link)
+    $($media).append($mediaContent)
+    $($cardContent).append($media)
+    $($figure).append($banner)
+    $($cardImg).append($figure)
+    $($card).append($cardImg, $cardContent)
+    $("#shopping").append($card)
     console.log(storeName);
     console.log(bannerURL);
   });
