@@ -121,8 +121,9 @@ function getStoreName(storeID, $price, $link) {
   });
 }
 function searchTwitch(gameName) {
-  $link = $("<a>")
+  $link = $("<a>").addClass("button is-dark")
     .attr("href", "http://twitch.tv/search?term=" + gameName)
-    .text("See Who's Streaming This Game!");
+    .text("See Who's Streaming This Game!")
   $("#twitch-link").append($link);
+  
 }
