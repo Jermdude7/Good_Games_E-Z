@@ -82,7 +82,7 @@ function getPrices(gameID) {
       let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID
       let $link = $("<a>").addClass("button is-success is-light is-small").attr({
         href: dealURL,
-        target: "_blank"
+        target: "_blank",
       }).text("Buy Now!") // link to retailer
 
       let price = deals.price;
