@@ -12,9 +12,6 @@ $("#search-bar").on("keypress", function (e) {
     searchTwitch(gameName);
   }
 });
-function getBio(gameName) {
-  console.log(gameName);
-}
 
 function getGame(gameName) {
   let queryURL = "https://api.rawg.io/api/games?search=";
@@ -24,7 +21,6 @@ function getGame(gameName) {
   let platformList = document.getElementById("platforms");
   let released = document.getElementById("release");
   let viewerIframe = document.getElementById("viewer");
-  let bioGame = document.getElementById("bio");
   $.ajax({
     url: queryURL + gameName,
     method: "GET",
