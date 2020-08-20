@@ -52,6 +52,7 @@ function getGame(gameName) {
     }
   });
 }
+
 function getGameID(gameName) {
   var queryURL =
     "https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=10";
@@ -65,6 +66,7 @@ function getGameID(gameName) {
     getPrices(gameID);
   });
 }
+
 function getPrices(gameID) {
   queryURL = "https://www.cheapshark.com/api/1.0/games?id=" + gameID;
   $.ajax({
@@ -75,10 +77,13 @@ function getPrices(gameID) {
     allPrices = response.deals;
     for (let i = 0; i < 5; i++) {
       let deals = allPrices[i];
-      
-      let dealID = deals.dealID; 
+
+      let dealID = deals.dealID;
       let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID
-      let $link = $("<a>").addClass("button is-success is-light is-small").attr({href: dealURL, target: "_blank"}).text("Buy Now!") // link to retailer
+      let $link = $("<a>").addClass("button is-success is-light is-small").attr({
+        href: dealURL,
+        target: "_blank"
+      }).text("Buy Now!") // link to retailer
 
       let price = deals.price;
       let $price = $("<p>").addClass("title is-4").text(price); // price
@@ -87,6 +92,7 @@ function getPrices(gameID) {
     }
   });
 }
+
 function getStoreName(storeID, $price, $link) {
   storeQueryURL = "https://www.cheapshark.com/api/1.0/stores";
   $.ajax({
@@ -107,7 +113,7 @@ function getStoreName(storeID, $price, $link) {
     let $cardContent = $("<div>").addClass("card-content"); // div that will hold media &
     let $media = $("<div>").addClass("media");
     let $mediaContent = $("<div>").addClass("media-content");
-    
+
     $($mediaContent).append($retailer, $price, $link)
     $($media).append($mediaContent)
     $($cardContent).append($media)
@@ -119,6 +125,7 @@ function getStoreName(storeID, $price, $link) {
     console.log(bannerURL);
   });
 }
+
 function searchTwitch(gameName) {
   $link = $("<a>")
     .attr("href", "http://twitch.tv/search?term=" + gameName)
