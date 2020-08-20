@@ -77,17 +77,9 @@ function getPrices(gameID) {
     for (let i = 0; i < 5; i++) {
       let deals = allPrices[i];
       
-      
       let dealID = deals.dealID; 
       let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID
       let $link = $("<a>").addClass("button is-success is-light is-small").attr({href: dealURL, target: "_blank"}).text("Buy Now!") // link to retailer
-      
-      let price = deals.price;
-      let $price = $("<p>").addClass("title is-4").text("$"+price) // price
-
-      let dealID = deals.dealID;
-      let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID;
-      let $link = $("<a>").attr("href", dealURL).text("Buy Now!"); // link to retailer
 
       let price = deals.price;
       let $price = $("<p>").addClass("title is-4").text(price); // price
