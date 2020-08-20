@@ -79,11 +79,14 @@ function getPrices(gameID) {
       let deals = allPrices[i];
 
       let dealID = deals.dealID;
-      let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID
-      let $link = $("<a>").addClass("button is-success is-light is-small").attr({
-        href: dealURL,
-        target: "_blank"
-      }).text("Buy Now!") // link to retailer
+      let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID;
+      let $link = $("<a>")
+        .addClass("button is-success is-light is-small")
+        .attr({
+          href: dealURL,
+          target: "_blank",
+        })
+        .text("Buy Now!"); // link to retailer
 
       let price = deals.price;
       let $price = $("<p>").addClass("title is-4").text(price); // price
@@ -114,22 +117,22 @@ function getStoreName(storeID, $price, $link) {
     let $media = $("<div>").addClass("media");
     let $mediaContent = $("<div>").addClass("media-content");
 
-    $($mediaContent).append($retailer, $price, $link)
-    $($media).append($mediaContent)
-    $($cardContent).append($media)
-    $($figure).append($banner)
-    $($cardImg).append($figure)
-    $($card).append($cardImg, $cardContent)
-    $("#shopping").append($card)
+    $($mediaContent).append($retailer, $price, $link);
+    $($media).append($mediaContent);
+    $($cardContent).append($media);
+    $($figure).append($banner);
+    $($cardImg).append($figure);
+    $($card).append($cardImg, $cardContent);
+    $("#shopping").append($card);
     console.log(storeName);
     console.log(bannerURL);
   });
 }
 
 function searchTwitch(gameName) {
-  $link = $("<a>").addClass("button is-dark")
+  $link = $("<a>")
+    .addClass("button is-dark")
     .attr("href", "http://twitch.tv/search?term=" + gameName)
-    .text("See Who's Streaming This Game!")
+    .text("See Who's Streaming This Game!");
   $("#twitch-link").append($link);
-  
 }
