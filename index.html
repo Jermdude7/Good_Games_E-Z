@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GG-EZ</title>
     <script src="https://kit.fontawesome.com/5b8ca097d5.js" crossorigin="anonymous"></script>
@@ -36,36 +36,34 @@
                             <div class="tile is-child notification is-dark">
                                 <h1 class="title" id="title">Game title</h1>
                                 <img id="backgroundImg" width="" height="" />
-                                <p class="subtitle">Released: <span id="release"></span></p>
+
+                                <p class="subtitle" style="margin-top: 10px;">Released: <span id="release"></span></p>
                                 <p class="subtitle">Metacritic Rating: <span id="rating"></span></p>
                             </div>
                             <div class="tile is-child notification is-dark">
-                                <span class="subtitle">Platforms:</span>
-                                <ul class="subtitle" id="platforms"></ul>
+                                <span class="title">Platforms:</span>
+
+                                <ul class="subtitle" style="margin-top: 10px;" id="platforms"></ul>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="column is-half">
                     <h1 class="title">Video Game Media</h1>
+                    <iframe id="viewer" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <div id="twitch-link"></div>
                     <div class="control"></div>
                 </div>
             </div>
-        </div>
-        <div class="column is-half">
-            <h1 class="title">Video Game Media</h1>
-            <iframe id="viewer" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            <div id="twitch-link"></div>
-            <div class="control"></div>
-        </div>
         </div>
     </section>
 
     <section class="section">
         <div id="shopping" class="container is-fluid"></div>
     </section>
+
     <footer class="footer">
         <div class="content has-text-centered">
             <h1 style="color : white"> Good Games E-Z</h1>
@@ -73,9 +71,10 @@
                 By Cooper, Blake, Dalton and Jeremy.
             </p>
         </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.js"
-            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <script src="script.js"></script>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
