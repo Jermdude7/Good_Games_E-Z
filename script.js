@@ -128,7 +128,11 @@ function getStoreName(storeID, $price, $link) {
 
 function searchTwitch(gameName) {
   $link = $("<a>").addClass("button is-dark")
-    .attr({href: "http://twitch.tv/search?term=" + gameName, id: "twitch-btn"})
+    .attr({
+      href: "http://twitch.tv/search?term=" + gameName,
+      id: "twitch-btn",
+      target: "_blank"
+    })
     .text("See Who's Streaming This Game!")
   $("#twitch-link").append($link);
 }
