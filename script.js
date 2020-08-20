@@ -129,8 +129,12 @@ function getStoreName(storeID, $price, $link) {
 function searchTwitch(gameName) {
   $icon = $("<i>").addClass("fab fa-twitch");
   $link = $("<a>").addClass("button is-dark")
-    .attr({href: "http://twitch.tv/search?term=" + gameName, id: "twitch-btn"})
-    .text("See Who's Streaming This Game!");
-  $($link).append($icon);
+    .attr({
+      href: "http://twitch.tv/search?term=" + gameName,
+      id: "twitch-btn",
+      target: "_blank"
+    })
+    .text("See Who's Streaming This Game!")
+  $($link).append($icon)
   $("#twitch-link").append($link);
 }
