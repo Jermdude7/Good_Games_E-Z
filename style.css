@@ -6,11 +6,19 @@
   display: none;
 }
 .card {
-    width: 200px;
-    height: 200px;
-    background-color: gray;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(175, 212, 255);
     border: solid 2px;
     border-radius: 15px;
     float: left;
-    margin-right: 10px;
+    margin-right: 20px;
+}
+
+.button {
+  margin-top: -20px;
+}
+
+.subtitle {
+  margin-top: -20px;
 }

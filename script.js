@@ -80,10 +80,10 @@ function getPrices(gameID) {
       
       let dealID = deals.dealID; 
       let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID
-      let $link = $("<a>").attr("href", dealURL).text("Buy Now!") // link to retailer
+      let $link = $("<a>").addClass("button is-success is-light is-small").attr("href", dealURL).text("Buy Now!") // link to retailer
       
       let price = deals.price;
-      let $price = $("<p>").addClass("title is-4").text(price) // price
+      let $price = $("<p>").addClass("title is-4").text("$"+price) // price
 
       let storeID = deals.storeID;
       getStoreName(storeID, $price, $link);
@@ -112,10 +112,10 @@ function getStoreName(storeID, $price, $link) {
     let $mediaContent = $("<div>").addClass("media-content");
     let $content = $("<div>").addClass("content");
     
-    $($content).append($link)
-    $($mediaContent).append($retailer, $price)
+    // $($content).append($link)
+    $($mediaContent).append($retailer, $price, $link)
     $($media).append($mediaContent)
-    $($cardContent).append($media, $content)
+    $($cardContent).append($media)
     $($figure).append($banner)
     $($cardImg).append($figure)
     $($card).append($cardImg, $cardContent)
