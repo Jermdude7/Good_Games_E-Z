@@ -110,9 +110,7 @@ function getStoreName(storeID, $price, $link) {
     let $cardContent = $("<div>").addClass("card-content"); // div that will hold media & 
     let $media = $("<div>").addClass("media");
     let $mediaContent = $("<div>").addClass("media-content");
-    let $content = $("<div>").addClass("content");
     
-    // $($content).append($link)
     $($mediaContent).append($retailer, $price, $link)
     $($media).append($mediaContent)
     $($cardContent).append($media)
