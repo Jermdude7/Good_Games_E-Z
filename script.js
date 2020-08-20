@@ -1,8 +1,6 @@
 let gameInfo = null;
 
-
-
-$("#search-bar").on("keypress", function (e){
+$("#search-bar").on("keypress", function (e) {
   if (e.key === "Enter") {
     e.preventDefault;
     let gameName = $("#search-bar").val();
@@ -13,21 +11,23 @@ $("#search-bar").on("keypress", function (e){
     getGameID(gameName);
     searchTwitch(gameName);
   }
-})
+});
 
 function getGame(gameName) {
   let queryURL = "https://api.rawg.io/api/games?search=";
-let titleHeader = document.getElementById("title");
-let rating = document.getElementById("rating");
-let background = document.getElementById("backgroundImg");
-let platformList = document.getElementById("platforms");
-let released = document.getElementById("release");
+  let titleHeader = document.getElementById("title");
+  let rating = document.getElementById("rating");
+  let background = document.getElementById("backgroundImg");
+  let platformList = document.getElementById("platforms");
+  let released = document.getElementById("release");
+  let viewerIframe = document.getElementById("viewer");
   $.ajax({
     url: queryURL + gameName,
     method: "GET",
   }).then(function (res) {
     response = res.results[0];
     gameInfo = {
+      videoId: response.clip.video,
       title: response.name,
       rating: response.metacritic,
       image: response.background_image,
@@ -37,6 +37,10 @@ let released = document.getElementById("release");
     rating.textContent = response.metacritic;
     titleHeader.textContent = response.name;
     background.setAttribute("src", response.background_image);
+    viewerIframe.setAttribute(
+      "src",
+      "https://www.youtube.com/embed/" + gameInfo.videoId
+    );
     //   platformList.textContent =
     released.textContent = response.released;
     console.log(response);
@@ -49,14 +53,10 @@ let released = document.getElementById("release");
     }
   });
 }
-
-
-
 function getGameID(gameName) {
-
   var queryURL =
-  "https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=10";
-  
+    "https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=10";
+
   $.ajax({
     url: queryURL,
     method: "GET",
@@ -85,6 +85,12 @@ function getPrices(gameID) {
       let price = deals.price;
       let $price = $("<p>").addClass("title is-4").text("$"+price) // price
 
+      let dealID = deals.dealID;
+      let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID;
+      let $link = $("<a>").attr("href", dealURL).text("Buy Now!"); // link to retailer
+
+      let price = deals.price;
+      let $price = $("<p>").addClass("title is-4").text(price); // price
       let storeID = deals.storeID;
       getStoreName(storeID, $price, $link);
     }
@@ -98,16 +104,16 @@ function getStoreName(storeID, $price, $link) {
   }).then(function (response) {
     // console.log(response)
     let storeName = response[storeID - 1].storeName;
-    let $retailer = $("<p>").addClass("subtitle is-6").text(storeName)
-    
+    let $retailer = $("<p>").addClass("subtitle is-6").text(storeName);
+
     let bannerPath = response[storeID - 1].images.banner;
     let bannerURL = "http://www.cheapshark.com" + bannerPath;
-    let $banner = $("<img>").attr("src", bannerURL)
-    
+    let $banner = $("<img>").attr("src", bannerURL);
+
     let $card = $("<div>").addClass("card"); // creates card
     let $cardImg = $("<div>").addClass("card-image"); // creates div for card image
     let $figure = $("<figure>").addClass("image is-3by1"); // img tag gets inserted in here
-    let $cardContent = $("<div>").addClass("card-content"); // div that will hold media & 
+    let $cardContent = $("<div>").addClass("card-content"); // div that will hold media &
     let $media = $("<div>").addClass("media");
     let $mediaContent = $("<div>").addClass("media-content");
     
@@ -122,8 +128,9 @@ function getStoreName(storeID, $price, $link) {
     console.log(bannerURL);
   });
 }
-
 function searchTwitch(gameName) {
-  $link = $("<a>").attr("href", "http://twitch.tv/search?term="+gameName).text("See Who's Streaming This Game!")
-  $("#twitch-link").append($link)
+  $link = $("<a>")
+    .attr("href", "http://twitch.tv/search?term=" + gameName)
+    .text("See Who's Streaming This Game!");
+  $("#twitch-link").append($link);
 }
