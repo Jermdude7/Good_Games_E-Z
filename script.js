@@ -64,7 +64,7 @@ function getGame(gameName) {
     bio.textContent = res[0].storyline;
     // res[0].summary.indexOf(". ");
     // bio.textContent = res[0].summary.slice(0, res[0].summary.indexOf(". "));
-    // // slice
+    // slice
   });
 }
 
