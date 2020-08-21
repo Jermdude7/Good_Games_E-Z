@@ -15,12 +15,16 @@ $("#search-bar").on("keypress", function (e) {
 
 function getGame(gameName) {
   let queryURL = "https://api.rawg.io/api/games?search=";
+  let otherURL =
+    "https://api-v3.igdb.com/games/?fields=name,storyline,summary&search=";
   let titleHeader = document.getElementById("title");
   let rating = document.getElementById("rating");
   let background = document.getElementById("backgroundImg");
   let platformList = document.getElementById("platforms");
   let released = document.getElementById("release");
   let viewerIframe = document.getElementById("viewer");
+  let cors = "https://dork.nathansbud-cors.workers.dev/?";
+  let bio = document.getElementById("description");
   $.ajax({
     url: queryURL + gameName,
     method: "GET",
@@ -51,6 +55,17 @@ function getGame(gameName) {
       platformList.appendChild(platform);
     }
   });
+  $.ajax({
+    url: cors + otherURL + gameName,
+    method: "GET",
+    headers: { "user-key": "9e1e37c2e5636f0c46a58b78e6d9f90b" },
+  }).then(function (res) {
+    console.log(res);
+    bio.textContent = res[0].storyline;
+    // res[0].summary.indexOf(". ");
+    // bio.textContent = res[0].summary.slice(0, res[0].summary.indexOf(". "));
+    // // slice
+  });
 }
 
 function getGameID(gameName) {
@@ -79,14 +94,19 @@ function getPrices(gameID) {
       let deals = allPrices[i];
 
       let dealID = deals.dealID;
-      let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID
-      let $link = $("<a>").addClass("button is-success is-light is-small").attr({
-        href: dealURL,
-        target: "_blank",
-      }).text("Buy Now!") // link to retailer
+      let dealURL = "https://www.cheapshark.com/redirect?dealID=" + dealID;
+      let $link = $("<a>")
+        .addClass("button is-success is-light is-small")
+        .attr({
+          href: dealURL,
+          target: "_blank",
+        })
+        .text("Buy Now!"); // link to retailer
 
       let price = deals.price;
-      let $price = $("<p>").addClass("title is-4").text("$" + price); // price
+      let $price = $("<p>")
+        .addClass("title is-4")
+        .text("$" + price); // price
       let storeID = deals.storeID;
       getStoreName(storeID, $price, $link);
     }
@@ -113,14 +133,14 @@ function getStoreName(storeID, $price, $link) {
     let $mediaContent = $("<div>").addClass("media-content");
     let $tile = $("<div>").addClass("tile is-child is-dark");
 
-    $($mediaContent).append($price, $link)
-    $($media).append($mediaContent)
-    $($cardContent).append($media)
-    $($figure).append($banner)
-    $($cardImg).append($figure)
-    $($card).append($cardImg, $cardContent)
-    $($tile).append($card)
-    $("#shopping").prepend($tile)
+    $($mediaContent).append($price, $link);
+    $($media).append($mediaContent);
+    $($cardContent).append($media);
+    $($figure).append($banner);
+    $($cardImg).append($figure);
+    $($card).append($cardImg, $cardContent);
+    $($tile).append($card);
+    $("#shopping").prepend($tile);
     console.log(storeName);
     console.log(bannerURL);
   });
@@ -128,13 +148,14 @@ function getStoreName(storeID, $price, $link) {
 
 function searchTwitch(gameName) {
   $icon = $("<i>").addClass("fab fa-twitch");
-  $link = $("<a>").addClass("button is-dark")
+  $link = $("<a>")
+    .addClass("button is-dark")
     .attr({
       href: "http://twitch.tv/search?term=" + gameName,
       id: "twitch-btn",
-      target: "_blank"
+      target: "_blank",
     })
-    .text("See Who's Streaming This Game! ")
-  $($link).append($icon)
+    .text("See Who's Streaming This Game! ");
+  $($link).append($icon);
   $("#twitch-link").append($link);
 }
