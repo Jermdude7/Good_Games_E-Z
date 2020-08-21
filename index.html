@@ -10,68 +10,90 @@
 </head>
 <body>
     <section class="hero is-dark is-bold">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">Good Games E-Z</h1>
-                <div class="control has-icons-right is-center">
-                    <div class="level-item">
-                        <input id="search-bar" class="input is-rounded" type="text" placeholder="Search Game">
-                        <span class="icon is-small is-right">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </div>
-                </div>
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Good Games E-Z</h1>
+          <div class="control has-icons-right is-center">
+            <div class="level-item">
+              <input
+                id="search-bar"
+                class="input is-rounded"
+                type="text"
+                placeholder="Search Game"
+              />
+              <span class="icon is-small is-right">
+                <i class="fas fa-search"></i>
+              </span>
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <section class="section">
-        <div class="container is-fluid">
-            <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
-                <div class="column is-half">
-                    <div class="tile is-ancestor">
-                        <div class="tile is-6 is-vertical is-parent">
-                            <div class="tile is-child notification is-dark">
-                                <h1 class="title" id="title">Game title</h1>
-                                <img id="backgroundImg" width="" height="" />
+      <div class="container is-fluid">
+        <div
+          class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd"
+        >
+          <div class="column is-half">
+            <div class="tile is-ancestor">
+              <div class="tile is-6 is-vertical is-parent">
+                <div class="tile is-child notification is-dark">
+                  <h1 class="title" id="title">Game title</h1>
+                  <img id="backgroundImg" width="" height="" />
 
-                                <p class="subtitle" style="margin-top: 10px;">Released: <span id="release"></span></p>
-                                <p class="subtitle">Metacritic Rating: <span id="rating"></span></p>
-                            </div>
-                            <div class="tile is-child notification is-dark">
-                                <span class="title">Platforms:</span>
+                  <p class="subtitle" style="margin-top: 10px;">
+                    Released: <span id="release"></span>
+                  </p>
+                  <p class="subtitle">
+                    Metacritic Rating: <span id="rating"></span>
+                  </p>
+                </div>
+                <div class="tile is-child notification is-dark">
+                  <span class="title">Platforms:</span>
 
-                                <ul class="content" style="margin-top: 10px;" id="platforms"></ul>
-                            </div>
-                        </div>
-                        <div class="tile is-6 is-vertical is-parent">
-                            <div class="tile is-child notification is-dark">
-                                <h1 class="title">Game Description:</h1>
-                            </div>
-                        </div>
-                    </div>
+                  <ul
+                    class="content"
+                    style="margin-top: 10px;"
+                    id="platforms"
+                  ></ul>
                 </div>
-                <div class="column is-half">
-                    <div class="tile is-ancestor">
-                        <div class="tile is-parent">
-                            <div class="tile is-9 is-child notification is-dark">
-                                <h1 class="title">Video Game Media</h1>
-                                <div class="tile is-12 is-child notification is-danger">
-                                    <div class="iframe-container">
-                                        <iframe style="padding: 0px;" id="viewer" width="560" height="315"
-                                            src="https://www.youtube.com/embed/" frameborder="0"
-                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <div class="tile is-12 is-child notification is-info">
-                                    <div id="twitch-link"><i class="fab fa-twitch"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="tile is-6 is-vertical is-parent">
+                <div class="tile is-child notification is-dark">
+                  <h1 class="title">Game Description:</h1>
+                  <p id="description"></p>
                 </div>
+              </div>
             </div>
+          </div>
+          <div class="column is-half">
+            <div class="tile is-ancestor">
+              <div class="tile is-parent">
+                <div class="tile is-9 is-child notification is-dark">
+                  <h1 class="title">Video Game Media</h1>
+                  <div class="tile is-12 is-child notification is-danger">
+                    <div class="iframe-container">
+                      <iframe
+                        style="padding: 0px;"
+                        id="viewer"
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+                  <div class="tile is-12 is-child notification is-info">
+                    <div id="twitch-link"><i class="fab fa-twitch"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <section class="section">
         <div class="container is-fluid">
@@ -84,18 +106,21 @@
                 <div id="shopping" class="tile is-parent"></div>
             </div>
         </div>
+      </div>
     </section>
     <footer class="footer">
-        <div class="content has-text-centered">
-            <h1 style="color : white"> Good Games E-Z</h1>
-            <p>
-                By Cooper, Blake, Dalton and Jeremy.
-            </p>
-        </div>
+      <div class="content has-text-centered">
+        <h1 style="color: white;">Good Games E-Z</h1>
+        <p>
+          By Cooper, Blake, Dalton and Jeremy.
+        </p>
+      </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
