@@ -36,3 +36,21 @@
   margin: 0;
   padding: auto;
 }
+.container{
+  font-family:'Times New Roman', Times, serif
+}
+.tile{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+}
+.title{
+  font-family:'Times New Roman', Times, serif;
+  font-size:36px;
+}
+body{
+  background: url(./assets/shl.png);
+}
+#scroll {
+  height: 500px;
+  overflow-y: auto;
+}
