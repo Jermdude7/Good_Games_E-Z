@@ -155,7 +155,7 @@ function searchTwitch(gameName) {
       id: "twitch-btn",
       target: "_blank",
     })
-    .text("Twitch Steams");
+    .text("Twitch Streams");
   $($link).prepend($icon);
   $("#twitch-link").append($link);
 }
