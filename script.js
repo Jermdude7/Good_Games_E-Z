@@ -155,7 +155,7 @@ function searchTwitch(gameName) {
       id: "twitch-btn",
       target: "_blank",
     })
-    .text("See Who's Streaming This Game! ");
-  $($link).append($icon);
+    .text("See Who's Streaming This Game!");
+  $($link).prepend($icon);
   $("#twitch-link").append($link);
 }
